@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+#阿里云OSS配置
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+#    填入accesskeyId和accesskeySecret
+#    accessKeyId:
+#    accessKeySecret:
+    bucketName: web-tlias-mmdxs
+
+#mybatis配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: 'true'
+#springboot配置
+spring:
+  application:
+    name: tlias
+  #文件上传的配置
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 300MB
+  #数据库配置
+  datasource:
+#    填入你的mysql数据库密码
+#    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/tlias
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+#name: itheima
