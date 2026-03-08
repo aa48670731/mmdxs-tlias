@@ -49,3 +49,14 @@ VALUES (1, 'jinyong', '123456', '金庸', 1, '1.jpg', 4, '2000-01-01', 2, now(),
        (15, 'yulianzhou', '123456', '俞莲舟', 1, '15.jpg', 2, '2011-05-01', 2, now(), now()),
        (16, 'songyuanqiao', '123456', '宋远桥', 1, '16.jpg', 2, '2007-01-01', 2, now(), now()),
        (17, 'chenyouliang', '123456', '陈友谅', 1, '17.jpg', NULL, '2015-03-21', NULL, now(), now());
+-- 操作日志表
+create table operate_log(
+                            id int unsigned primary key auto_increment comment 'ID',
+                            operate_user int unsigned comment '操作人ID',
+                            operate_time datetime comment '操作时间',
+                            class_name varchar(100) comment '操作的类名',
+                            method_name varchar(100) comment '操作的方法名',
+                            method_params varchar(1000) comment '方法参数',
+                            return_value varchar(2000) comment '返回值',
+                            cost_time bigint comment '方法执行耗时, 单位:ms'
+) comment '操作日志表';
